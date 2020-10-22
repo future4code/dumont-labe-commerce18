@@ -12,9 +12,6 @@ const DivGeral = styled.div`
   border: 1px solid red;
 `
 
-
-
-
 function App() {
   return (
     <div>
