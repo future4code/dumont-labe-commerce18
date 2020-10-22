@@ -1,14 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Produto1 from '../../img/camiseta1.png'
-import Produto2 from '../../img/camiseta2.jpg'
-import Produto3 from '../../img/camiseta3.jpg'
-import Produto4 from '../../img/camiseta4.jpg'
-import Produto5 from '../../img/camiseta5.jpg'
-import Produto6 from '../../img/camiseta6.jpg'
-import Produto7 from '../../img/camiseta7.jpg'
-import Produto8 from '../../img/camiseta8.jpg'
-
 
 const DivProduto = styled.div `
     border:1px solid black;
@@ -25,10 +16,11 @@ const TamanhoImagem = styled.img `
 ` 
 class Produtos extends React.Component{
     render (){
+        const listaDeProdutos = this.props.listaDeProdutos
         return <DivProduto>
-            <TamanhoImagem src={Produto1}/>    
-            <label>Descrição</label>        
-            <label>Preço</label>
+            <TamanhoImagem src={listaDeProdutos.imagem}/>    
+            <label>{listaDeProdutos.nome}</label>        
+            <label>R$:{listaDeProdutos.valor}</label>
             <button>Adicionar Carrinho</button>
         </DivProduto>
     }

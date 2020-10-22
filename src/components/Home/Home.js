@@ -29,14 +29,10 @@ class Home extends React.Component{
                     </label>    
                 </FlexProduto>
             <Grid>                       
-                <Produtos/>                                                           
-                <Produtos/>
-                <Produtos/>
-                <Produtos/>
-                <Produtos/>
-                <Produtos/>
-                <Produtos/>
-                <Produtos/>
+                {this.props.produtos.map((dados)=>{
+                    return <Produtos listaDeProdutos = {dados}/>
+                    })
+                }                
             </Grid>
         </div>
         )
