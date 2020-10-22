@@ -12,6 +12,7 @@ import Camiseta5 from './img/camiseta5.jpg'
 import Camiseta6 from './img/camiseta6.jpg'
 import Camiseta7 from './img/camiseta7.jpg'
 import Camiseta8 from './img/camiseta8.jpg'
+import Fundo  from './img/astroNave.jpg'
 
 const listaDeProdutos = [
   {
@@ -67,8 +68,15 @@ const listaDeProdutos = [
 const DivGeral = styled.div`
   display: grid;
   grid-template-rows: 1fr;
+<<<<<<< HEAD
   grid-template-columns: repeat(4, 1fr);
   border: 1px solid red;
+=======
+  grid-template-columns: 1fr 3fr 1fr;
+  padding:10px;
+  gap:10px;
+   
+>>>>>>> adicionada imagem para fundo
 `
 
 function App() {
