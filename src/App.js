@@ -1,5 +1,5 @@
 import React from "react";
-import Filtro from "./components/Filtro"
+// import Filtro from "./components/Filtro"
 import Home from "./components/Home"
 import Carrinho from "./components/Carrinho"
 import BlusaCinco from "./components/img/camiseta5.jpg"
@@ -20,7 +20,7 @@ function App() {
     <div>
       <DivGeral>
         <div> 
-          <Filtro/>
+          {/* <Filtro/> */}
         </div>
         <div> 
           <Home
