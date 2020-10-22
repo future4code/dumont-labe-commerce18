@@ -12,6 +12,7 @@ const DivGeral = styled.div`
   border: 1px solid red;
 `
 
+const Produtos = styled.div
 
 
 
