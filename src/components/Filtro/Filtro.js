@@ -7,24 +7,27 @@ const EstilizaDiv = styled.div`
     align-items: flex-start;    
 `
 const InputEstilizado = styled.div `
-    margin:0 10px; // 0 px cima e baixo e 10 px esquerda e direita        
+    margin:0 10px; // 0 px cima e baixo e 10 px esquerda e direita  
+    display:grid;
+    grid-template-columns:1fr 1fr;    
+    grid-template-rows:1fr 1fr 1fr;  
 `
-
+ 
 class Filtro extends React.Component{
     render(){
         return (
             <EstilizaDiv>                
                     <h2>Filtros:</h2>
                     <InputEstilizado>
-                        <label>Valor Mínimo:</label>
+                        <label>Valor Mínimo: </label>
                         <input type='number' value={this.props.filtroMinimo}></input>                               
                     </InputEstilizado>
                     <InputEstilizado>
-                        <label>Valor Máximo:</label>
+                        <label>Valor Máximo: </label>
                         <input type="number" value={this.props.filtroMaximo}></input>                                
                     </InputEstilizado>
                     <InputEstilizado>
-                        <label>Buscar Produto</label>
+                        <label>Buscar Produto: </label>
                         <input type='text' value={this.props.filtroNome}></input>
                     </InputEstilizado>                
             </EstilizaDiv>
