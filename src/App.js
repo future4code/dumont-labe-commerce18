@@ -13,7 +13,6 @@ import Camiseta6 from './img/camiseta6.jpg'
 import Camiseta7 from './img/camiseta7.jpg'
 import Camiseta8 from './img/camiseta8.jpg'
 import FundoDiv from './img/fundo.jpg'
-
 const listaDeProdutos = [
   {
     id:1,
@@ -64,14 +63,12 @@ const listaDeProdutos = [
     imagem: Camiseta8
   }, 
 ]
-
 const GridDiv = styled.div`
   display:grid;  
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 3fr 1fr;
   padding:10px;  
   gap:10px;
-   
 `
 const DivBody = styled.div`
   background: url(${FundoDiv});
@@ -79,11 +76,34 @@ const DivBody = styled.div`
 `
 class App extends React.Component {
   state = {
-    filtroMinimo:0,
-    filtroMaximo: 1050,
+    filtroMinimo:-Infinity,
+    filtroMaximo: Infinity,
     filtroNome: '',    
   }
-
+  onChangeInputMinimo = (event)=>{
+    if (event.target.value===''){
+      this.setState({filtroMinimo:-Infinity})
+    }else{
+      this.setState({filtroMinimo:event.target.value})    
+    }
+  }
+  onChangeInputMaximo = (event)=>{
+    if (event.target.value===''){
+      this.setState({filtroMaximo:Infinity})
+    }else{
+      this.setState({filtroMaximo:event.target.value})    
+    }
+  }
+  onChangeInputNome = (event) =>{
+    this.setState({filtroNome:event.target.value})
+  }
+  onClickAdiciona = ()=>{
+    const listaCarrinho=[{
+      id:listaDeProdutos.id,
+      nome:listaDeProdutos.nome,
+      valor:listaDeProdutos.valor
+    }]
+  }
   render(){
     return (
       <DivBody>      
@@ -92,14 +112,17 @@ class App extends React.Component {
           <Filtro
             filtroMinimo={this.state.filtroMinimo}
             filtroMaximo={this.state.filtroMaximo}
-            filtroNome={this.state.filtroNome}
-            
+            filtroNome={this.state.filtroNome}   
+            onChangeInputMinimo={this.onChangeInputMinimo}         
+            onChangeInputMaximo={this.onChangeInputMaximo}
+            onChangeInputNome={this.onChangeInputNome}
           />
           <Home
            listaDeProdutos={listaDeProdutos}
            filtroMinimo={this.state.filtroMinimo}
            filtroMaximo={this.state.filtroMaximo}
            filtroNome={this.state.filtroNome}
+           onClickAdiciona={this.onClickAdiciona}
           />
           <Carrinho/>
         </GridDiv>
