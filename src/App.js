@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-import React from "react";
-// import Filtro from "./components/Filtro"
-import Home from "./components/Home"
-import Carrinho from "./components/Carrinho"
-import BlusaCinco from "./components/img/camiseta5.jpg"
-=======
 import React from 'react';
 import Filtro from "./components/Filtro/Filtro"
 import Home from "./components/Home/Home"
 import Carrinho from "./components/Carrinho/Carrinho"
 import Cabecalho from "./components/Cabecalho/Cabecalho"
->>>>>>> Filtro realizado
 import styled from "styled-components"
 import Camiseta1 from './img/camiseta1.png'
 import Camiseta2 from './img/camiseta2.jpg'
@@ -73,29 +65,18 @@ const listaDeProdutos = [
   }, 
 ]
 
-<<<<<<< HEAD
-const DivGeral = styled.div`
-  display: grid;
-=======
 const GridDiv = styled.div`
   display:grid;  
->>>>>>> Filtro realizado
   grid-template-rows: 1fr;
-<<<<<<< HEAD
-  grid-template-columns: repeat(4, 1fr);
-  border: 1px solid red;
-=======
   grid-template-columns: 1fr 3fr 1fr;
   padding:10px;  
   gap:10px;
    
->>>>>>> adicionada imagem para fundo
 `
 const DivBody = styled.div`
   background: url(${FundoDiv});
   color:white;
 `
-
 class App extends React.Component {
   state = {
     filtroMinimo:0,
@@ -103,64 +84,6 @@ class App extends React.Component {
     filtroNome: '',    
   }
 
-<<<<<<< HEAD
-function App() {
-  return (
-    <div>
-      <DivGeral>
-        <div> 
-          {/* <Filtro/> */}
-        </div>
-        <div> 
-          <Home
-          fotoProduto={BlusaCinco}
-          descricao={'Blusa..'}
-          preco={'R$ 50,00'}
-          />
-          <Home
-          fotoProduto={BlusaCinco}
-          descricao={'Blusa..'}
-          preco={'R$ 50,00'}
-          />
-          <Home
-          fotoProduto={BlusaCinco}
-          descricao={'Blusa..'}
-          preco={'R$ 50,00'}
-          />
-          <Home
-          fotoProduto={BlusaCinco}
-          descricao={'Blusa..'}
-          preco={'R$ 50,00'}
-          />
-        </div>
-        <div> 
-          <Home
-          fotoProduto={BlusaCinco}
-          descricao={'Blusa..'}
-          preco={'R$ 50,00'}
-          />
-          <Home
-          fotoProduto={BlusaCinco}
-          descricao={'Blusa..'}
-          preco={'R$ 50,00'}
-          />
-          <Home
-          fotoProduto={BlusaCinco}
-          descricao={'Blusa..'}
-          preco={'R$ 50,00'}
-          />
-          <Home
-          fotoProduto={BlusaCinco}
-          descricao={'Blusa..'}
-          preco={'R$ 50,00'}
-          />
-        </div>
-        <Carrinho/>
-      </DivGeral>
-    </div>
-  );
-=======
-  
   render(){
     return (
       <DivBody>      
@@ -183,6 +106,5 @@ function App() {
       </DivBody>
     );
   }
->>>>>>> Filtro realizado
 }
 export default App;
