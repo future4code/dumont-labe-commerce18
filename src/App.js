@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 import React from "react";
 // import Filtro from "./components/Filtro"
 import Home from "./components/Home"
 import Carrinho from "./components/Carrinho"
 import BlusaCinco from "./components/img/camiseta5.jpg"
+=======
+import React from 'react';
+import Filtro from "./components/Filtro/Filtro"
+import Home from "./components/Home/Home"
+import Carrinho from "./components/Carrinho/Carrinho"
+import Cabecalho from "./components/Cabecalho/Cabecalho"
+>>>>>>> Filtro realizado
 import styled from "styled-components"
 import Camiseta1 from './img/camiseta1.png'
 import Camiseta2 from './img/camiseta2.jpg'
@@ -12,7 +20,7 @@ import Camiseta5 from './img/camiseta5.jpg'
 import Camiseta6 from './img/camiseta6.jpg'
 import Camiseta7 from './img/camiseta7.jpg'
 import Camiseta8 from './img/camiseta8.jpg'
-import Fundo  from './img/astroNave.jpg'
+import FundoDiv from './img/fundo.jpg'
 
 const listaDeProdutos = [
   {
@@ -65,20 +73,37 @@ const listaDeProdutos = [
   }, 
 ]
 
+<<<<<<< HEAD
 const DivGeral = styled.div`
   display: grid;
+=======
+const GridDiv = styled.div`
+  display:grid;  
+>>>>>>> Filtro realizado
   grid-template-rows: 1fr;
 <<<<<<< HEAD
   grid-template-columns: repeat(4, 1fr);
   border: 1px solid red;
 =======
   grid-template-columns: 1fr 3fr 1fr;
-  padding:10px;
+  padding:10px;  
   gap:10px;
    
 >>>>>>> adicionada imagem para fundo
 `
+const DivBody = styled.div`
+  background: url(${FundoDiv});
+  color:white;
+`
 
+class App extends React.Component {
+  state = {
+    filtroMinimo:0,
+    filtroMaximo: 1050,
+    filtroNome: '',    
+  }
+
+<<<<<<< HEAD
 function App() {
   return (
     <div>
@@ -134,5 +159,30 @@ function App() {
       </DivGeral>
     </div>
   );
+=======
+  
+  render(){
+    return (
+      <DivBody>      
+        <Cabecalho/>
+        <GridDiv>        
+          <Filtro
+            filtroMinimo={this.state.filtroMinimo}
+            filtroMaximo={this.state.filtroMaximo}
+            filtroNome={this.state.filtroNome}
+            
+          />
+          <Home
+           listaDeProdutos={listaDeProdutos}
+           filtroMinimo={this.state.filtroMinimo}
+           filtroMaximo={this.state.filtroMaximo}
+           filtroNome={this.state.filtroNome}
+          />
+          <Carrinho/>
+        </GridDiv>
+      </DivBody>
+    );
+  }
+>>>>>>> Filtro realizado
 }
 export default App;

@@ -9,6 +9,7 @@ const EstilizaDiv = styled.div`
 const InputEstilizado = styled.div `
     margin:0 10px; // 0 px cima e baixo e 10 px esquerda e direita        
 `
+
 class Filtro extends React.Component{
     render(){
         return (
@@ -16,17 +17,16 @@ class Filtro extends React.Component{
                     <h2>Filtros:</h2>
                     <InputEstilizado>
                         <label>Valor Mínimo:</label>
-                        <input type='number'></input>                               
+                        <input type='number' value={this.props.filtroMinimo}></input>                               
                     </InputEstilizado>
                     <InputEstilizado>
                         <label>Valor Máximo:</label>
-                        <input type="number"></input>                                
+                        <input type="number" value={this.props.filtroMaximo}></input>                                
                     </InputEstilizado>
                     <InputEstilizado>
                         <label>Buscar Produto</label>
-                        <input type='text'></input>
-                    </InputEstilizado>
-                
+                        <input type='text' value={this.props.filtroNome}></input>
+                    </InputEstilizado>                
             </EstilizaDiv>
         )
     }
